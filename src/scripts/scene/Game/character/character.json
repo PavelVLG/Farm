@@ -3,12 +3,12 @@
     "wheat": {
         "value_name": "wheat",
         "value_sum": 1,
-        "speed": 10
+        "speed": 3000
     },
     "chicken": {
         "value_name": "egg",
         "value_sum": 1,
-        "speed": 10,
+        "speed": 5000,
         "need_source": "wheat",
         "time_source": 30,
         "need": 1,
@@ -17,10 +17,10 @@
     "cow": {
         "value_name": "milk",
         "value_sum": 1,
-        "speed": 20,
+        "speed": 7000,
         "need_source": "wheat",
         "time_source": 20,
-        "need": 1,
+        "need": 2,
         "price": 20
     }
 }

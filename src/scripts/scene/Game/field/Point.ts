@@ -13,7 +13,7 @@ export default class Point extends Phaser.Geom.Point {
         this.__filled = false;
         this.scene = scene;
 
-        scene.add.rectangle(x, y, 100, 100, COLORS.WHITE, 0.8);
+        scene.add.circle(x, y, 55, COLORS.WHITE);
     }
 
     get filled() {

@@ -1,7 +1,7 @@
 [
     {
         "key": "game",
-        "json": "assets/sprite/assets.json",
-        "png": "assets/sprite/assets.png"
+        "json": "assets/sprite/game.json",
+        "png": "assets/sprite/game.png"
     }
 ]

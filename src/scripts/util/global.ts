@@ -7,9 +7,9 @@ export const FIELD_SIZE = { verticalCells: 8, horizontalCells: 8 };
 export const HANDLE_EVENT = new Phaser.Events.EventEmitter();
 
 export const ELEMENTS = {
-    wheat: [0, 10],
-    chicken: [8, 1],
-    cow: [6, 2],
+    wheat: [0, 1],
+    chicken: [20, 21],
+    cow: [16, 17],
 };
 
 export const IS_DEBUG = process.env.NODE_ENV === 'development' ? true : false;
@@ -37,19 +37,19 @@ export enum COLORS {
 
 export const FRAMES = {
     chicken: {
-        idle: 'chicken_idle',
         prefix: 'chicken_',
-        frames: 3,
+        start: 'start',
+        end: 'end',
     },
     wheat: {
-        idle: 'wheat_0',
         prefix: 'wheat_',
-        frames: 2,
+        start: 'start',
+        end: 'end',
     },
     cow: {
-        idle: 'cow_idle',
         prefix: 'cow_',
-        frames: 4,
+        start: 'start',
+        end: 'end',
     },
 } as const;
 

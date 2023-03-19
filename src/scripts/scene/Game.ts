@@ -5,7 +5,7 @@ import BasketMoney from './Game/field/BasketMoney';
 import BasketWheat from './Game/field/BasketWheat';
 import Field from './Game/field/Field';
 import Phaser from 'phaser';
-import FactoryCharacter from './Game/character/FactoryCharacter';
+import FactoryCell from './Game/character/FactoryCell';
 export default class Game extends Phaser.Scene {
     private field: Field;
     constructor() {
@@ -28,7 +28,6 @@ export default class Game extends Phaser.Scene {
         new BasketMilk(this, x, 900);
 
         this.field = new Field(this);
-
-        new FactoryCharacter(this, this.field.points);
+        new FactoryCell(this, this.field.points);
     }
 }

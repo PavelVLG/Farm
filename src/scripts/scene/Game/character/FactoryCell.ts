@@ -1,13 +1,9 @@
 import { ELEMENTS, FRAMES, state } from 'scripts/util/global';
 import Point from '../field/Point';
-import Chicken from './Chicken';
-import Cow from './Cow';
+import Cell from './Cell';
 import { SKIN } from './interface';
-import Wheat from './Wheat';
 
-export type TCharacter = Chicken | Cow | Wheat;
-
-export default class FactoryCharacter {
+export default class FactoryCell {
     private scene: Phaser.Scene;
 
     constructor(scene: Phaser.Scene, points: Point[]) {
@@ -32,14 +28,14 @@ export default class FactoryCharacter {
         });
     }
 
-    private createSprit(name: SKIN, point: Point): TCharacter {
+    private createSprit(name: SKIN, point: Point): Cell {
         if (name === 'chicken') {
             const config = {
                 ...FRAMES.chicken,
                 speed: state.chicken.speed,
             };
 
-            return new Chicken(this.scene, config, point);
+            return new Cell(this.scene, config, point, state.chicken);
         }
 
         if (name === 'wheat') {
@@ -47,7 +43,8 @@ export default class FactoryCharacter {
                 ...FRAMES.wheat,
                 speed: state.wheat.speed,
             };
-            return new Wheat(this.scene, config, point);
+
+            return new Cell(this.scene, config, point, state.wheat);
         }
 
         if (name === 'cow') {
@@ -56,7 +53,7 @@ export default class FactoryCharacter {
                 speed: state.cow.speed,
             };
 
-            return new Cow(this.scene, config, point);
+            return new Cell(this.scene, config, point, state.cow);
         }
     }
 }

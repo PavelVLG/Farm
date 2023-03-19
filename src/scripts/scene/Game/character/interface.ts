@@ -3,7 +3,7 @@ export enum SKIN {
     CHICKEN = 'chicken',
     WHEAT = 'wheat',
 }
-export interface DataCharacter {
+export interface DataCell {
     value_name: string;
     value_sum: number;
     speed: number;
