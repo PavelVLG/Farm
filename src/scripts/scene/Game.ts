@@ -19,9 +19,9 @@ export default class Game extends Phaser.Scene {
     public preload() {}
 
     public create() {
-        const { width } = this.scale;
+        const { width, height } = this.scale;
         const x = width * 0.9;
-
+        //@todo: replace basket
         new BasketMoney(this, x, 150);
         new BasketEgg(this, x, 400);
         new BasketWheat(this, x, 650);

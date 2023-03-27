@@ -27,6 +27,7 @@ export enum EVENTS {
 }
 
 export enum COLORS {
+    PURPLE = 0xff00ff,
     BLUE = 0xfff,
     SALAD = 0xff00,
     BLACK = 0x000,

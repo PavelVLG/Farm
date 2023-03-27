@@ -17,9 +17,9 @@ export class State {
         this.chicken = chicken;
         this.cow = cow;
         this.wheat = wheat;
-        this.value_milk = new PrimalSubject(1);
+        this.value_milk = new PrimalSubject(0);
         this.value_money = new PrimalSubject(0);
-        this.value_wheat = new PrimalSubject(1);
-        this.value_egg = new PrimalSubject(1);
+        this.value_wheat = new PrimalSubject(0);
+        this.value_egg = new PrimalSubject(0);
     }
 }

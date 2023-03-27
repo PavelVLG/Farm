@@ -63,7 +63,7 @@ export default class Field {
         bottom: number;
     }): Points {
         const { left, right, top, bottom } = position;
-
+        const { width, height } = this.scene.scale;
         const lines = new Phaser.Geom.Line(left, top, right, top);
 
         const lineX = Phaser.Geom.Line.GetEasedPoints(lines, '', sum_point.x);

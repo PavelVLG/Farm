@@ -1,11 +1,12 @@
 import Point from '../field/Point';
 import { DataCell } from './interface';
-import Phaser, { RIGHT } from 'phaser';
+import Phaser from 'phaser';
 import Draggable from '../modules/Draggable';
 import AnimCell from '../modules/Tween';
 import { state } from 'scripts/util/global';
 import { State } from 'scripts/scene/state/State';
 import { PrimalSubject } from 'scripts/scene/state/observer';
+import ProgressCell from '../modules/Progress';
 
 type Status = 'wait' | 'process' | 'complete';
 
@@ -17,21 +18,24 @@ export type ConfigAnimate = {
 };
 
 export default class Cell extends Phaser.GameObjects.Sprite {
+    public scene: Phaser.Scene;
     private _anims: ConfigAnimate;
     private _dataCell: DataCell;
     private _status: Status;
-    public scene: Phaser.Scene;
-    public animation: AnimCell;
-
+    private animation: AnimCell;
+    private progress: ProgressCell;
     constructor(scene: Phaser.Scene, configAnim: ConfigAnimate, point: Point, dataCell: DataCell) {
         super(scene, point.x, point.y, 'game');
+
         this.setScale(0.2);
         this.scene = scene;
         this._anims = configAnim;
         this._dataCell = dataCell;
         this._status = 'wait';
         this.scene.add.layer(this);
+        this.progress = new ProgressCell(scene, this, configAnim.speed / 1000);
         this.init();
+
         this.on('pointerdown', this.updateStatus, this);
     }
 
@@ -66,7 +70,7 @@ export default class Cell extends Phaser.GameObjects.Sprite {
                 this.updateSource();
 
                 this.animation.setFrame('start');
-
+                this.progress.clear();
                 this.status = 'wait';
                 return;
 
@@ -74,6 +78,8 @@ export default class Cell extends Phaser.GameObjects.Sprite {
                 if (!this.checkSource()) return;
 
                 this.status = 'process';
+
+                this.progress.start();
 
                 await this.animation.process();
 
