@@ -26,6 +26,10 @@ export enum EVENTS {
     TEST = 'test',
 }
 
+export enum EMIT {
+    DRAG_END = 'drag_end',
+}
+
 export enum COLORS {
     PURPLE = 0xff00ff,
     BLUE = 0xfff,

@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { EMIT } from 'scripts/util/global';
 import Point from './Point';
 const sum_point = { x: 8, y: 8 };
 
@@ -91,6 +92,7 @@ export default class Field {
             pointer.filled = true;
             const { x, y } = pointer;
             target.setPosition(x, y);
+            target.emit(EMIT.DRAG_END);
             return;
         }
 

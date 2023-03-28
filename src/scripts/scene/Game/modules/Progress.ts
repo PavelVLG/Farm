@@ -1,5 +1,5 @@
 import Interval from 'scripts/scene/modules/Interval';
-import { COLORS } from 'scripts/util/global';
+import { COLORS, EMIT } from 'scripts/util/global';
 import Phaser, { RIGHT } from 'phaser';
 
 type Parent = Phaser.GameObjects.Sprite;
@@ -19,6 +19,7 @@ export default class ProgressCell extends Interval {
 
         this.parent = parent;
         this.createElements();
+        this.parent.on(EMIT.DRAG_END, this.updatePos, this);
     }
 
     private createElements() {

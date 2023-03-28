@@ -14,7 +14,7 @@ interface Loading {
     updateProgress: (progress: number) => void;
     changeVisible: (visible: boolean) => void;
 }
-//@todo: сделать переиспользуемым вынести в modules
+
 export default class LoadingProgress extends Phaser.GameObjects.Container implements Loading {
     public scene: Phaser.Scene;
     public progressBar: Phaser.GameObjects.Rectangle;
@@ -36,7 +36,7 @@ export default class LoadingProgress extends Phaser.GameObjects.Container implem
 
         this.background = this.scene.add.rectangle(x, y, 5000, 5000, COLORS.BLACK, 1);
 
-        this.progressBar = this.scene.add.rectangle(x * 0.7, y, 0, 80, 0xfff);
+        this.progressBar = this.scene.add.rectangle(x * 0.7, y, 0, 80, COLORS.LITE_BLUE);
 
         this.text = this.scene.add.text(x * 0.75, y * 0.95, text, {
             fontFamily: 'fantasy',
