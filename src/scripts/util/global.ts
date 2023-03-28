@@ -56,7 +56,5 @@ export const FRAMES = {
 
 export const WIDTH = 1920;
 export const HEIGHT = 1080;
-export const CENTER_X = WIDTH / 2;
-export const CENTER_Y = HEIGHT / 2;
 
 export const state = new State();

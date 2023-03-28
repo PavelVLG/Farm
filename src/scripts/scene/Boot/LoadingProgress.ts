@@ -1,4 +1,4 @@
-import { CENTER_X, CENTER_Y, COLORS } from 'scripts/util/global';
+import { COLORS } from 'scripts/util/global';
 
 const text = 'loading';
 
@@ -29,11 +29,16 @@ export default class LoadingProgress extends Phaser.GameObjects.Container implem
         scene.add.existing(this);
     }
     public init() {
-        this.background = this.scene.add.rectangle(CENTER_X, CENTER_Y, 5000, 5000, COLORS.BLACK, 1);
+        const { width, height } = this.scene.scale;
 
-        this.progressBar = this.scene.add.rectangle(CENTER_X * 0.7, CENTER_Y, 0, 80, 0xfff);
+        const x = width / 2;
+        const y = height / 2;
 
-        this.text = this.scene.add.text(CENTER_X * 0.75, CENTER_Y * 0.95, text, {
+        this.background = this.scene.add.rectangle(x, y, 5000, 5000, COLORS.BLACK, 1);
+
+        this.progressBar = this.scene.add.rectangle(x * 0.7, y, 0, 80, 0xfff);
+
+        this.text = this.scene.add.text(x * 0.75, y * 0.95, text, {
             fontFamily: 'fantasy',
             fontSize: '44px',
         });
