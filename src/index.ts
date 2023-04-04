@@ -36,6 +36,6 @@ const config = {
     desynchronized: true,
     powerPreference: 'high-performance',
     saveDrawingBuffer: true,
-    backgroundColor: COLORS.LITE_BLUE,
+    backgroundColor: COLORS.BLACK,
 };
 export const game = new Phaser.Game(config);

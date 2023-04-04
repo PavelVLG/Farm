@@ -1,5 +1,4 @@
 {
-    "key": "name_png",
     "wheat": {
         "value_name": "wheat",
         "value_sum": 1,
@@ -21,6 +20,6 @@
         "need_source": "wheat",
         "time_source": 20,
         "need": 2,
-        "price": 20
+        "price": 50
     }
 }

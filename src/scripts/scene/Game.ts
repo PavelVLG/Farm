@@ -1,11 +1,8 @@
 import { SCENES } from '../util/global';
-import BasketEgg from './Game/field/BasketEgg';
-import BasketMilk from './Game/field/BasketMilk';
-import BasketMoney from './Game/field/BasketMoney';
-import BasketWheat from './Game/field/BasketWheat';
 import Field from './Game/field/Field';
 import Phaser from 'phaser';
 import FactoryCell from './Game/character/FactoryCell';
+import FactoryBasket from './Game/field/basket/FactoryBasket';
 export default class Game extends Phaser.Scene {
     private field: Field;
     constructor() {
@@ -16,18 +13,17 @@ export default class Game extends Phaser.Scene {
         this.game.scene.stop(SCENES.BOOT);
     }
 
-    public preload() {}
-
     public create() {
-        const { width, height } = this.scale;
+        this.createCell();
+        new FactoryBasket(this);
+    }
+
+    private createCell() {
+        const { width } = this.scale;
         const x = width * 0.9;
-        //@todo: replace basket
-        new BasketMoney(this, x, 150);
-        new BasketEgg(this, x, 400);
-        new BasketWheat(this, x, 650);
-        new BasketMilk(this, x, 900);
 
         this.field = new Field(this);
+
         new FactoryCell(this, this.field.points);
     }
 }

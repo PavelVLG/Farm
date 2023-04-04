@@ -3,5 +3,10 @@
         "key": "game",
         "json": "assets/sprite/game.json",
         "png": "assets/sprite/game.png"
+    },
+    {
+        "key": "btn",
+        "json": "assets/sprite/btn/btn.json",
+        "png": "assets/sprite/btn/btn.png"
     }
 ]
