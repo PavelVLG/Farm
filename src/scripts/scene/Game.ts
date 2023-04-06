@@ -1,11 +1,8 @@
-import { SCENES, state } from '../util/global';
+import { SCENES } from '../util/global';
 import Field from './Game/field/Field';
 import Phaser from 'phaser';
 import FactoryCell from './Game/character/FactoryCell';
 import FactoryBasket from './Game/field/basket/FactoryBasket';
-import { StatePrimal, ValueOf } from './type';
-import { State } from './state/State';
-import { PrimalSubject } from './state/observer';
 export default class Game extends Phaser.Scene {
     private field: Field;
     constructor() {
