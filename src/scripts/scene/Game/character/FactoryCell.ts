@@ -1,3 +1,4 @@
+import { Skins } from 'scripts/scene/type';
 import { ELEMENTS, FRAMES, state } from 'scripts/util/global';
 import Point from '../field/Point';
 import Cell from './Cell';
@@ -28,7 +29,7 @@ export default class FactoryCell {
         });
     }
 
-    private createSprit(name: SKIN, point: Point): Cell {
+    private createSprit(name: Skins, point: Point): Cell {
         if (name === 'chicken') {
             const config = {
                 ...FRAMES.chicken,

@@ -14,31 +14,31 @@ export const ELEMENTS = {
 
 export const IS_DEBUG = process.env.NODE_ENV === 'development' ? true : false;
 
-export enum SCENES {
-    BOOT = 'Boot',
-    GAME = 'Game',
-}
+export const SCENES = {
+    BOOT: 'Boot',
+    GAME: 'Game',
+} as const;
 
-export enum EVENTS {
-    LOADING = 'loading',
-    LOADED = 'loaded',
-    START_SCENE = 'start_scene',
-    TEST = 'test',
-}
+export const EVENTS = {
+    LOADING: 'loading',
+    LOADED: 'loaded',
+    START_SCENE: 'start_scene',
+    TEST: 'test',
+} as const;
 
-export enum EMIT {
-    DRAG_END = 'drag_end',
-}
+export const EMIT = {
+    DRAG_END: 'drag_end',
+} as const;
 
-export enum COLORS {
-    PURPLE = 0xff00ff,
-    BLUE = 0xfff,
-    SALAD = 0xff00,
-    BLACK = 0x000,
-    ELlOW = 0xffff00,
-    LITE_BLUE = 0xffff,
-    WHITE = 0xffffff,
-}
+export const COLORS = {
+    PURPLE: 0xff00ff,
+    BLUE: 0xfff,
+    SALAD: 0xff00,
+    BLACK: 0x000,
+    ELlOW: 0xffff00,
+    LITE_BLUE: 0xffff,
+    WHITE: 0xffffff,
+};
 
 export const FRAMES = {
     chicken: {

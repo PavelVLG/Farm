@@ -1,6 +1,7 @@
 import Sprite from 'assets/atlas.json';
 import { SCENES } from '../util/global';
 import LoadingProgress from './Boot/LoadingProgress';
+import { Scenes } from './type';
 
 export default class Boot extends Phaser.Scene {
     public loader: LoadingProgress;
@@ -30,7 +31,7 @@ export default class Boot extends Phaser.Scene {
         this.loader.updateProgress(value);
     }
 
-    private changeScene(scene: SCENES) {
+    private changeScene(scene: Scenes) {
         this.time.delayedCall(50, () => {
             this.loader.changeVisible(false);
             this.game.scene.start(scene);

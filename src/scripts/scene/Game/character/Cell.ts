@@ -7,6 +7,7 @@ import { state } from 'scripts/util/global';
 import { State } from 'scripts/scene/state/State';
 import { PrimalSubject } from 'scripts/scene/state/observer';
 import ProgressCell from '../modules/Progress';
+import { StatePrimal } from 'scripts/scene/type';
 
 type Status = 'wait' | 'process' | 'complete';
 
@@ -119,7 +120,7 @@ export default class Cell extends Phaser.GameObjects.Sprite {
         source.value += value_sum;
     }
 
-    private getPrimalSubject(name: string): PrimalSubject | undefined {
+    private getPrimalSubject(name: string): StatePrimal | undefined {
         const source = `value_${name}`;
 
         const key = state[source as keyof State];

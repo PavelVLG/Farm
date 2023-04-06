@@ -1,8 +1,8 @@
-export enum SKIN {
-    COW = 'cow',
-    CHICKEN = 'chicken',
-    WHEAT = 'wheat',
-}
+export const SKIN = {
+    COW: 'cow',
+    CHICKEN: 'chicken',
+    WHEAT: 'wheat',
+} as const;
 export interface DataCell {
     value_name: string;
     value_sum: number;
