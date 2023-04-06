@@ -1,3 +1,4 @@
+import Png from 'assets/png.json';
 import Sprite from 'assets/atlas.json';
 import { SCENES } from '../util/global';
 import LoadingProgress from './Boot/LoadingProgress';
@@ -15,10 +16,16 @@ export default class Boot extends Phaser.Scene {
 
     public preload() {
         this.loadAtlas();
-
+        this.loadPng();
         this.load.on('progress', (value: number) => this.loadProgress(value));
 
         this.load.on('complete', () => this.changeScene(SCENES.GAME));
+    }
+
+    private loadPng() {
+        Png.forEach(({ key, path }) => {
+            this.load.image(key, path);
+        });
     }
 
     private loadAtlas() {

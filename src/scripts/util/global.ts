@@ -58,6 +58,10 @@ export const FRAMES = {
     },
 } as const;
 
+export const PNG = {
+    HAND: 'hand',
+} as const;
+
 export const SKIN = {
     COW: 'cow',
     CHICKEN: 'chicken',
