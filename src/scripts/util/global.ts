@@ -30,16 +30,6 @@ export const EMIT = {
     DRAG_END: 'drag_end',
 } as const;
 
-export const COLORS = {
-    PURPLE: 0xff00ff,
-    BLUE: 0xfff,
-    SALAD: 0xff00,
-    BLACK: 0x000,
-    ELlOW: 0xffff00,
-    LITE_BLUE: 0xffff,
-    WHITE: 0xffffff,
-};
-
 export const FRAMES = {
     chicken: {
         prefix: 'chicken_',

@@ -1,5 +1,5 @@
-import { COLORS } from 'scripts/util/global';
 import Phaser, { RIGHT } from 'phaser';
+import { COLORS } from 'scripts/scene/styles';
 type GameObject = Phaser.GameObjects.Sprite;
 type Pointer = Phaser.Input.Pointer;
 

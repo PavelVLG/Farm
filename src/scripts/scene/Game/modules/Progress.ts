@@ -1,6 +1,7 @@
 import Interval from 'scripts/scene/modules/Interval';
-import { COLORS, EMIT } from 'scripts/util/global';
-import Phaser, { RIGHT } from 'phaser';
+import { EMIT } from 'scripts/util/global';
+import Phaser from 'phaser';
+import { COLORS } from 'scripts/scene/styles';
 
 type Parent = Phaser.GameObjects.Sprite;
 export default class ProgressCell extends Interval {

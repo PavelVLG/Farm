@@ -2,7 +2,8 @@ import Phaser from 'phaser';
 import 'phaser/plugins/spine/dist/SpinePlugin';
 import Boot from 'scripts/scene/Boot';
 import Game from 'scripts/scene/Game';
-import { COLORS, FPS, HEIGHT, WIDTH } from 'scripts/util/global';
+import { COLORS } from 'scripts/scene/styles';
+import { FPS, HEIGHT, WIDTH } from 'scripts/util/global';
 
 const config = {
     type: Phaser.WEBGL,

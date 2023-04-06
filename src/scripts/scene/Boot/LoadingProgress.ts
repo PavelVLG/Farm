@@ -1,68 +1,69 @@
-import { COLORS } from 'scripts/util/global';
+import { COLORS, coordinates, text_style, TINTS } from '../styles';
 
-const text = 'loading';
-
-interface Loading {
-    scene: Phaser.Scene;
-    progressBar: Phaser.GameObjects.Rectangle;
-    text: Phaser.GameObjects.Text;
-    background: Phaser.GameObjects.Rectangle;
-
-    update: () => void;
-    init: () => void;
-    create: () => void;
-    updateProgress: (progress: number) => void;
-    changeVisible: (visible: boolean) => void;
-}
-
-export default class LoadingProgress extends Phaser.GameObjects.Container implements Loading {
+type Rectangle = Phaser.GameObjects.Rectangle;
+export default class LoadingProgress extends Phaser.GameObjects.Container {
     public scene: Phaser.Scene;
-    public progressBar: Phaser.GameObjects.Rectangle;
-    public background: Phaser.GameObjects.Rectangle;
-    public text: Phaser.GameObjects.Text;
+
+    private render_texture: Phaser.GameObjects.RenderTexture;
+    private texture_background: Rectangle;
+    private bar: Rectangle;
 
     constructor(scene: Phaser.Scene) {
-        super(scene);
+        super(scene, scene.scale.width / 2, scene.scale.height / 2);
+
         this.scene = scene;
+
         this.init();
 
         scene.add.existing(this);
     }
+
     public init() {
-        const { width, height } = this.scene.scale;
-
-        const x = width / 2;
-        const y = height / 2;
-
-        this.background = this.scene.add.rectangle(x, y, 5000, 5000, COLORS.BLACK, 1);
-
-        this.progressBar = this.scene.add.rectangle(x * 0.7, y, 0, 80, COLORS.LITE_BLUE);
-
-        this.text = this.scene.add.text(x * 0.75, y * 0.95, text, {
-            fontFamily: 'fantasy',
-            fontSize: '44px',
-        });
-
-        this.add([this.background, this.progressBar, this.text]);
+        this.addTitle();
+        this.addBar();
     }
 
-    public create() {}
+    private addBar() {
+        const { loading_texture } = coordinates;
+        const { x, y, width, height } = loading_texture;
+
+        const rt = this.scene.add.renderTexture(x, y, width, height).setOrigin(0.5);
+
+        const background = this.scene.add
+            .rectangle(x, y, width * 2, height, COLORS.WHITE, 1)
+            .setVisible(false);
+
+        const bar = this.scene.add.rectangle(x, y, 0, height, COLORS.PURPLE, 1).setVisible(false);
+
+        this.render_texture = rt;
+        this.texture_background = background;
+        this.bar = bar;
+
+        this.add(rt);
+    }
+
+    private addTitle() {
+        const { text, style } = text_style.loading_title;
+        const { x, y } = coordinates.loading_title;
+
+        const title = this.scene.add.text(x, y, text, style);
+
+        title.setOrigin(0.5).setTint(...TINTS[1]);
+
+        this.add(title);
+    }
 
     public updateProgress(progress: number) {
-        this.progressBar.width += 100 * progress;
-    }
+        const { render_texture } = this;
 
-    public changeVisible(visible: boolean) {
-        this.setVisible(visible);
-    }
-}
+        const width = this.render_texture.width * progress;
 
-export class LoaderCreator {
-    public container: Phaser.GameObjects.Container;
+        this.bar.width = width;
 
-    constructor() {}
+        render_texture.clear();
 
-    public getContainer() {
-        return this.container;
+        render_texture.draw(this.texture_background, 0, 0);
+
+        render_texture.draw(this.bar, 0, 0);
     }
 }

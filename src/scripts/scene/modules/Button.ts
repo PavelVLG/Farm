@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import { COLORS } from 'scripts/util/global';
 
 type Frames = {
     static: string;
