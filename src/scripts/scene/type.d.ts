@@ -1,5 +1,4 @@
-import { SCENES } from 'scripts/util/global';
-import { SKIN } from './Game/character/interface';
+import { SCENES, SKIN } from 'scripts/util/global';
 import { PrimalSubject } from './state/observer';
 import { State } from './state/State';
 
@@ -10,3 +9,21 @@ export type Scenes = ValueOf<typeof SCENES>;
 export type Skins = ValueOf<typeof SKIN>;
 
 export type StatePrimal = State[keyof State] & PrimalSubject;
+
+export interface DataCell {
+    value_name: string;
+    value_sum: number;
+    speed: number;
+    need_source?: string;
+    time_source?: number;
+    need?: number;
+    price?: number;
+}
+
+export type TextConfig = {
+    x: number;
+    y: number;
+    text: string | string[];
+};
+
+export type TextStile = Phaser.Types.GameObjects.Text.TextStyle;

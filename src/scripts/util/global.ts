@@ -58,7 +58,14 @@ export const FRAMES = {
     },
 } as const;
 
-export const WIDTH = 1920;
-export const HEIGHT = 1080;
+export const SKIN = {
+    COW: 'cow',
+    CHICKEN: 'chicken',
+    WHEAT: 'wheat',
+} as const;
+
+export const WIDTH = document.documentElement.clientWidth;
+
+export const HEIGHT = (9 / 16) * WIDTH;
 
 export const state = new State();

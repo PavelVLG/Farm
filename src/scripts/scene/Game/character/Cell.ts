@@ -1,5 +1,4 @@
 import Point from '../field/Point';
-import { DataCell } from './interface';
 import Phaser from 'phaser';
 import Draggable from '../modules/Draggable';
 import AnimCell from '../modules/Tween';
@@ -7,7 +6,7 @@ import { state } from 'scripts/util/global';
 import { State } from 'scripts/scene/state/State';
 import { PrimalSubject } from 'scripts/scene/state/observer';
 import ProgressCell from '../modules/Progress';
-import { StatePrimal } from 'scripts/scene/type';
+import { DataCell, StatePrimal } from 'scripts/scene/type';
 
 type Status = 'wait' | 'process' | 'complete';
 

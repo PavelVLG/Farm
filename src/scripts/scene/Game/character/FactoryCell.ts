@@ -1,15 +1,14 @@
 import { Skins } from 'scripts/scene/type';
-import { ELEMENTS, FRAMES, state } from 'scripts/util/global';
+import { ELEMENTS, FRAMES, SKIN, state } from 'scripts/util/global';
 import Point from '../field/Point';
 import Cell from './Cell';
-import { SKIN } from './interface';
 
 export default class FactoryCell {
     private scene: Phaser.Scene;
 
     constructor(scene: Phaser.Scene, points: Point[]) {
         this.scene = scene;
-        //@todo: дублирование
+
         ELEMENTS.chicken.forEach((id) => {
             const point = points.at(id);
             point.filled = true;

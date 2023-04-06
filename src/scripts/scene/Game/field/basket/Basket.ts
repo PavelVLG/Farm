@@ -1,10 +1,4 @@
-export type TextConfig = {
-    x: number;
-    y: number;
-    text: string | string[];
-};
-
-export type TextStile = Phaser.Types.GameObjects.Text.TextStyle;
+import { TextStile } from 'scripts/scene/type';
 
 type Text = Phaser.GameObjects.Text;
 

@@ -9,7 +9,7 @@ export const text_style = {
         fontSize: '50px',
         color: 'rgb(255,255,255)',
     },
-};
+} as const;
 
 export const btn_frames = {
     basket: {
@@ -17,4 +17,4 @@ export const btn_frames = {
         hover: 'btn_hover',
         click: 'btn_click',
     },
-};
+} as const;

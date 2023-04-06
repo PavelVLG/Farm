@@ -1,10 +1,8 @@
-//@todo observer?
 import dataCharacter from '../Game/character/character.json';
-import { DataCell, SKIN } from '../Game/character/interface';
+import { DataCell } from '../type';
 import { PrimalSubject } from './observer';
 const { chicken, wheat, cow } = dataCharacter;
 
-export type CellName = keyof typeof SKIN;
 export class State {
     public readonly value_wheat: PrimalSubject;
     public readonly value_money: PrimalSubject;

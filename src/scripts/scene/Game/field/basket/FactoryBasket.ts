@@ -2,10 +2,10 @@ import Button from 'scripts/scene/modules/Button';
 import { PrimalSubject } from 'scripts/scene/state/observer';
 import { State } from 'scripts/scene/state/State';
 import { state } from 'scripts/util/global';
-import { btn_frames, text_style } from 'scripts/util/viewSettings';
 import { Basket, TextGUI } from './Basket';
-import { DataCell } from '../../character/interface';
 import dataCharacter from '../../character/character.json';
+import { text_style, btn_frames } from 'scripts/scene/styles';
+import { DataCell } from 'scripts/scene/type';
 
 type UpdateState = { key: keyof State; sum: number };
 export default class FactoryBasket {
