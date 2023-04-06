@@ -1,12 +1,12 @@
 export const text_style = {
     basket: {
         fontFamily: 'fantasy',
-        fontSize: '50px',
+        fontSize: '32px',
         color: 'rgb(255,255,255)',
     },
     button: {
         fontFamily: 'fantasy',
-        fontSize: '50px',
+        fontSize: '40px',
         color: 'rgb(255,255,255)',
     },
 } as const;

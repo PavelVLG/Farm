@@ -18,8 +18,8 @@ export class Basket extends Phaser.GameObjects.Container {
         subtitleConfig: TextGUI
     ) {
         super(scene, x, y);
-        this.addText(titleConfig, 0, -30);
-        this.addText(subtitleConfig, 0, 30);
+        this.addText(titleConfig, 0, -20);
+        this.addText(subtitleConfig, 0, 20);
 
         this.scene = scene;
         scene.add.existing(this);

@@ -22,7 +22,7 @@ export default class FactoryBasket {
     private createBaskets() {
         const values = Object.values(dataCharacter);
 
-        let startY = 100;
+        let startY = 0;
 
         values.forEach(({ value_name, price, value_sum }: DataCell) => {
             const primalKey = `value_${value_name}` as keyof State;
