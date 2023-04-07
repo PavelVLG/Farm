@@ -3,6 +3,7 @@ import Field from './Game/field/Field';
 import Phaser from 'phaser';
 import FactoryCell from './Game/character/FactoryCell';
 import FactoryBasket from './Game/field/basket/FactoryBasket';
+import Hints from './Game/hints/Hints';
 export default class Game extends Phaser.Scene {
     private field: Field;
     constructor() {
@@ -13,9 +14,14 @@ export default class Game extends Phaser.Scene {
         this.game.scene.stop(SCENES.BOOT);
     }
 
-    public create() {
+    public async create() {
         this.createCell();
+
         new FactoryBasket(this);
+
+        const hints = new Hints(this);
+
+        hints.startHint();
     }
 
     private createCell() {

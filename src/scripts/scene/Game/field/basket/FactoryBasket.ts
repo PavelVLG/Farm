@@ -6,8 +6,11 @@ import { Basket, TextGUI } from './Basket';
 import dataCharacter from '../../character/character.json';
 import { text_style, btn_frames } from 'scripts/scene/styles';
 import { DataCell } from 'scripts/scene/type';
+import { BorderCircle } from 'scripts/scene/modules/border/BorderCircle';
+import { BorderRadius } from 'scripts/scene/modules/border/BorderRadius';
 
 type UpdateState = { key: keyof State; sum: number };
+//@todo: вынести часть в отдельные классы
 export default class FactoryBasket {
     public scene: Phaser.Scene;
 
@@ -62,6 +65,8 @@ export default class FactoryBasket {
         const basket = new Basket(this.scene, width * 0.9, height * 0.1, configs[0], configs[1]);
 
         this.addObserver('value_money', basket.setSubtitle.bind(basket));
+
+        new BorderCircle(this.scene, basket);
     }
 
     private addObserver(key: keyof State, call: (arg: string) => void) {

@@ -32,19 +32,19 @@ export const EMIT = {
 
 export const FRAMES = {
     chicken: {
-        prefix: 'chicken_',
-        start: 'start',
-        end: 'end',
+        prefix: 'chicken',
+        start: '_start',
+        end: '_end',
     },
     wheat: {
-        prefix: 'wheat_',
-        start: 'start',
-        end: 'end',
+        prefix: 'wheat',
+        start: '_start',
+        end: '_end',
     },
     cow: {
-        prefix: 'cow_',
-        start: 'start',
-        end: 'end',
+        prefix: 'cow',
+        start: '_start',
+        end: '_end',
     },
 } as const;
 
