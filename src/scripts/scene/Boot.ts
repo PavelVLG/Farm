@@ -39,6 +39,6 @@ export default class Boot extends Phaser.Scene {
     }
 
     private changeScene(scene: Scenes) {
-        this.time.delayedCall(500, () => this.game.scene.start(scene));
+        this.time.delayedCall(1000, () => this.game.scene.start(scene));
     }
 }

@@ -58,7 +58,7 @@ export default class ProgressCell extends Interval {
         const { centerX, centerY, radius } = this.pos;
 
         this.circle.clear();
-        this.circle.lineStyle(4, COLORS.PURPLE, 1);
+        this.circle.lineStyle(4, COLORS.BLACK, 1);
 
         const step = 360 * percent - 1;
 

@@ -21,12 +21,12 @@ export const text_style = {
 export const coordinates = {
     loading_title: {
         x: 0,
-        y: -100,
+        y: -50,
     },
 
     loading_texture: {
         x: 0,
-        y: 100,
+        y: 50,
         width: 400,
         height: 20,
     },
