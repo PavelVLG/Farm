@@ -10,6 +10,11 @@ export type Skins = ValueOf<typeof SKIN>;
 
 export type StatePrimal = State[keyof State] & PrimalSubject;
 
+export type PrimalSubjectKeys<T> = {
+    [K in keyof T]: T[K] extends PrimalSubject ? K : never;
+}[keyof T];
+
+export type PrimalSubjectStateKey = PrimalSubjectKeys<State>;
 export interface DataCell {
     value_name: string;
     value_sum: number;
