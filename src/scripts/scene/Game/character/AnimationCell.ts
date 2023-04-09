@@ -1,9 +1,10 @@
-import Cell, { ConfigAnimate } from '../character/Cell';
+import Cell, { ConfigAnimate } from './Cell';
 import Phaser from 'phaser';
-export default class AnimCell {
+export default class AnimationCell {
     private scene: Phaser.Scene;
     private target: Cell;
     private animations: ConfigAnimate;
+
     constructor(scene: Phaser.Scene, target: Cell) {
         this.scene = scene;
         this.target = target;
