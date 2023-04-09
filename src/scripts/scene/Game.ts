@@ -7,12 +7,14 @@ import FactorySource from './Game/field/plates/FactorySourcePlate';
 import ResourcePlate from './Game/field/plates/ResourcePlate';
 export default class Game extends Phaser.Scene {
     private field: Field;
+    private cursor: Phaser.Input.Pointer[];
     constructor() {
         super(SCENES.GAME);
     }
 
     public init() {
         this.game.scene.stop(SCENES.BOOT);
+        this.cursor = this.input.addPointer();
     }
 
     public async create() {

@@ -31,7 +31,7 @@ export default class Button extends Phaser.GameObjects.Container {
 
         const sprite = scene.add.sprite(0, 0, texture_name, frames.static);
 
-        sprite.setInteractive();
+        sprite.setInteractive({ cursor: 'pointer' });
 
         sprite.on('pointerdown', () => this.on_click());
 

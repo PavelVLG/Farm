@@ -9,7 +9,7 @@ export default class Draggable {
     }
 
     public init() {
-        this.sprite.setInteractive();
+        this.sprite.setInteractive({ cursor: 'pointer' });
 
         this.scene.input.dragTimeThreshold = 200;
 
