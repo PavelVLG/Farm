@@ -1,0 +1,146 @@
+
+bigwins.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bott
+  rotate: true
+  xy: 861, 239
+  size: 270, 96
+  orig: 270, 96
+  offset: 0, 0
+  index: -1
+mid
+  rotate: true
+  xy: 861, 239
+  size: 270, 96
+  orig: 270, 96
+  offset: 0, 0
+  index: -1
+top
+  rotate: true
+  xy: 861, 239
+  size: 270, 96
+  orig: 270, 96
+  offset: 0, 0
+  index: -1
+coin_000
+  rotate: false
+  xy: 861, 29
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_001
+  rotate: false
+  xy: 911, 29
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_002
+  rotate: false
+  xy: 961, 29
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_003
+  rotate: false
+  xy: 1011, 29
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_004
+  rotate: false
+  xy: 957, 459
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_005
+  rotate: false
+  xy: 957, 409
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_006
+  rotate: false
+  xy: 957, 359
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_007
+  rotate: false
+  xy: 957, 309
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_008
+  rotate: false
+  xy: 957, 259
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_009
+  rotate: false
+  xy: 1007, 459
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_010
+  rotate: false
+  xy: 1007, 409
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_011
+  rotate: false
+  xy: 1007, 359
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_012
+  rotate: false
+  xy: 1007, 309
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_013
+  rotate: false
+  xy: 1007, 259
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+coin_014
+  rotate: false
+  xy: 1021, 209
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+popup
+  rotate: false
+  xy: 0, 0
+  size: 861, 509
+  orig: 861, 509
+  offset: 0, 0
+  index: -1
+ray_beam
+  rotate: false
+  xy: 861, 79
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1

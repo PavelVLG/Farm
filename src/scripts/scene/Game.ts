@@ -1,10 +1,11 @@
 import { SCENES } from '../util/global';
+import { BorderCircle } from './modules/border/BorderCircle';
 import Field from './Game/field/Field';
 import Phaser from 'phaser';
 import FactoryCell from './Game/character/FactoryCell';
-import { BorderCircle } from './modules/border/BorderCircle';
 import FactorySource from './Game/field/plates/FactorySourcePlate';
 import ResourcePlate from './Game/field/plates/ResourcePlate';
+import BasePopUp from './modules/popups.ts/BasePopUp';
 export default class Game extends Phaser.Scene {
     private field: Field;
     private cursor: Phaser.Input.Pointer[];
@@ -20,6 +21,7 @@ export default class Game extends Phaser.Scene {
     public async create() {
         this.createCell();
         this.addPlates();
+        this.createPopUp();
     }
 
     private addPlates() {
@@ -43,5 +45,10 @@ export default class Game extends Phaser.Scene {
         this.field = new Field(this);
 
         new FactoryCell(this, this.field.points);
+    }
+
+    private createPopUp() {
+        const popup = new BasePopUp(this, 'PopUp');
+        popup.open();
     }
 }

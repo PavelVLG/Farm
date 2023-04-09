@@ -28,6 +28,8 @@ export const EVENTS = {
 
 export const EMIT = {
     DRAG_END: 'drag_end',
+    POPUP_OPEN: 'popup_open',
+    POPUP_CLOSE: 'popup_close',
 } as const;
 
 export const FRAMES = {
