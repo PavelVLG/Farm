@@ -1,0 +1,7 @@
+[
+    {
+        "key": "popup",
+        "json": "assets/spine/popup/popup.json",
+        "atlas": "assets/spine/popup/popup.atlas"
+    }
+]
