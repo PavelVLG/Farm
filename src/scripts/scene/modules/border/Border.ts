@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 export type GameObject = Phaser.GameObjects.GameObject;
 export type Rectangle = Phaser.GameObjects.Rectangle;
 export type Geom = Phaser.Geom.Rectangle;
@@ -15,6 +17,10 @@ export default abstract class Border {
 
         this.addGraphics();
         this.addBorder();
+    }
+
+    get border() {
+        return this.graphics;
     }
 
     protected addBorder() {}

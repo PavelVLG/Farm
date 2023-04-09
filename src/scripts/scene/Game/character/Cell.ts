@@ -28,12 +28,16 @@ export default class Cell extends Phaser.GameObjects.Sprite {
         super(scene, point.x, point.y, 'game');
 
         this.setScale(0.2);
+
         this.scene = scene;
         this._anims = configAnim;
         this._dataCell = dataCell;
         this._status = 'wait';
+
         this.scene.add.layer(this);
+
         this.progress = new ProgressCell(scene, this, configAnim.speed / 1000);
+
         this.init();
 
         this.on('pointerdown', this.updateStatus, this);
